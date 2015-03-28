@@ -8,6 +8,8 @@ module.exports = (->
     file_manager.rootify [
       'angular/angular'
       'angular-ui-router/release/angular-ui-router'
+      'angular-cycle-gallery/build/angular-cycle-gallery.min'
+      'gsap/src/uncompressed/TweenMax'
       'fastclick/lib/fastclick'
     ], "bower_components", 'js'
 

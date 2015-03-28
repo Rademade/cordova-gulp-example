@@ -1,7 +1,7 @@
 (function() {
   var hasProp = {}.hasOwnProperty;
 
-  window.app = angular.module('app', ['ui.router']).run([
+  window.app = angular.module('app', ['ui.router', 'multiGallery']).run([
     '$templateFactory', '$templateCache', '$rootScope', function($templateFactory, $templateCache, $rootScope) {
       var templateName, templateSource;
       $templateFactory.fromString = function(name) {
@@ -30,13 +30,33 @@
         url: '',
         templateUrl: 'views/index',
         controller: 'IndexController'
+      }).state('public.gallery', {
+        url: 'gallery',
+        templateUrl: 'views/gallery',
+        controller: 'GalleryController'
       });
-      $urlRouterProvider.otherwise('/');
-      return $locationProvider.html5Mode({
-        enabled: false,
-        requireBase: false,
-        html5Mode: false
-      });
+      return $urlRouterProvider.otherwise('/');
+    }
+  ]);
+
+}).call(this);
+
+(function() {
+  app.controller('GalleryController', [
+    '$scope', function($scope) {
+      return $scope.gallery = [
+        {
+          text: 'Item 1'
+        }, {
+          text: 'Item 2'
+        }, {
+          text: 'Item 3'
+        }, {
+          text: 'Item 4'
+        }, {
+          text: 'Item 5'
+        }
+      ];
     }
   ]);
 

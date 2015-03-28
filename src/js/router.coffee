@@ -14,11 +14,16 @@ app.config [
         templateUrl : 'views/index'
         controller : 'IndexController'
 
+      .state 'public.gallery',
+        url : 'gallery'
+        templateUrl : 'views/gallery'
+        controller : 'GalleryController'
+
     $urlRouterProvider.otherwise '/'
 
-    $locationProvider.html5Mode #TODO need params in web version
-      enabled : false
-      requireBase : false
-      html5Mode : false
+#    $locationProvider.html5Mode #TODO need params in web version
+#      enabled : false
+#      requireBase : false
+#      html5Mode : false
 
 ]

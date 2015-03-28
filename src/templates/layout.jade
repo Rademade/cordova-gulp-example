@@ -1,2 +1,10 @@
-h1() Layout
-div(ui-view="")
+div.wrapper
+    h1() Application
+
+    ul
+        li()
+            a(ui-sref="public.index") Home
+        li()
+            a(ui-sref="public.gallery") Gallery
+
+    div(ui-view="")

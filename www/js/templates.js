@@ -4,7 +4,14 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<h1>Layout</h1><div ui-view=\"\"></div>");;return buf.join("");
+buf.push("<div class=\"wrapper\"><h1>Application</h1><ul><li><a ui-sref=\"public.index\">Home</a></li><li><a ui-sref=\"public.gallery\">Gallery</a></li></ul><div ui-view=\"\"></div></div>");;return buf.join("");
+})();
+this["Templates"]["views/gallery"] = (function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<div gallery-config-buffer=\"4\" class=\"gallery-wrapper\"><div class=\"gallery-slider\"><div gallery-repeater=\"item in gallery\" class=\"gallery-item\"><div class=\"gallery-item-content\">{{item.text}}</div></div></div><button gallery-button=\"animateNext\" class=\"action-button next animate\">Animate next</button><button gallery-button=\"animatePrev\" class=\"action-button prev animate\">Animate prev</button></div>");;return buf.join("");
 })();
 this["Templates"]["views/index"] = (function template(locals) {
 var buf = [];

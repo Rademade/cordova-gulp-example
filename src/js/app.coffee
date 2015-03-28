@@ -1,5 +1,6 @@
 window.app = angular.module('app', [
   'ui.router'
+  'multiGallery'
 ]).run([
   '$templateFactory', '$templateCache','$rootScope',
   ($templateFactory, $templateCache, $rootScope)->

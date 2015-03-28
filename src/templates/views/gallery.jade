@@ -1,0 +1,6 @@
+div.gallery-wrapper(gallery-config-buffer="4")
+    div.gallery-slider
+        div.gallery-item(gallery-repeater="item in gallery")
+            div.gallery-item-content() {{item.text}}
+    button.action-button.next.animate(gallery-button="animateNext") Animate next
+    button.action-button.prev.animate(gallery-button="animatePrev") Animate prev
