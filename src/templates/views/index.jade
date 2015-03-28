@@ -1,0 +1,9 @@
+div.items-list
+    h2() List items
+    ul
+        li(ng-repeat="item in list") {{item}}
+
+div.add-form
+    h5 Add new items
+    input(type="text" name="new_item" ng-model="new_item")
+    button(ng-click="add()") Add
